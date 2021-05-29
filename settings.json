@@ -1,3 +1,17 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true  
 }
+
+
+{
+    "name": "writting-sass",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "sass": "sass --watch ./scss/main.scss :./css/main.css --style compressed"
+    },
+    "author": "",
+    "license": "ISC",
+}
+    

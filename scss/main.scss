@@ -93,7 +93,7 @@ h2
 		p{
 			margin-bottom: 40px;
 		}
-		.pres__btn
+		.btn__recherche
 		{
 			text-decoration: none;
 			background-color: $color-secondary;
@@ -126,10 +126,9 @@ justify-content: space-around;
 		box-sizing: border-box;
 		.fonct__links
 		{
-			text-decoration: none;
-			color: black;
-			font-weight: 600;
-		
+		text-decoration: none;
+		color: black;
+		font-weight: 600;
 		}
 		.fonct__logo
 		{

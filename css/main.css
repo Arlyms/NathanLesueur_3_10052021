@@ -94,7 +94,7 @@ h2 {
 #presentation p {
   margin-bottom: 40px;
 }
-#presentation .pres__btn {
+#presentation .btn__recherche {
   text-decoration: none;
   background-color: #FF79DA;
   color: white;

@@ -39,13 +39,12 @@ h2 {
 
 /**Header**/
 .logo_ohmyfood {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   height: 50px;
+  position: relative;
 }
 .logo_ohmyfood img {
   width: 150px;
@@ -53,6 +52,13 @@ h2 {
   display: block;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 10px;
+}
+.logo_ohmyfood .arrow {
+  position: absolute;
+  left: 30px;
+  top: 7px;
+  color: #353535;
 }
 
 #recherches {

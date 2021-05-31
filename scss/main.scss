@@ -97,17 +97,19 @@ body
 		p{
 			margin-bottom: 40px;
 		}
-		.btn__recherche
-		{
-			text-decoration: none;
-			background-color: $color-secondary;
-			color: white;
-			border-radius: 25px 25px 25px 25px;
-			padding: 15px;
-			font-weight: 700;
-			font-size: 0.8em;
-			box-sizing: border-box;
-		}
+		
+}
+
+.btn__recherche
+{
+	text-decoration: none;
+	background: linear-gradient($color-primary,$color-secondary);
+	color: white;
+	border-radius: 25px 25px 25px 25px;
+	padding: 15px;
+	font-weight: 700;
+	font-size: 0.8em;
+	box-sizing: border-box;
 }
 
 /**Fonctionnement**/
@@ -333,6 +335,15 @@ flex-direction: column;
 		margin: 0px;
 		padding-bottom: 10px;
 	}
+}
+
+.commander
+{
+	text-align: center;
+	padding: 40px;
+	padding-top: 20px;
+	box-sizing: border-box;
+
 }
 
 

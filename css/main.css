@@ -67,7 +67,7 @@
 
 @-webkit-keyframes loader {
   0% {
-    z-index: 2;
+    z-index: 3;
   }
   99% {
     z-index: -10;
@@ -80,7 +80,7 @@
 
 @keyframes loader {
   0% {
-    z-index: 2;
+    z-index: 3;
   }
   99% {
     z-index: -10;
@@ -434,13 +434,28 @@ body {
   margin-left: 10px;
 }
 .vignettes .vign__box .vign__coeur {
+  z-index: 2;
   position: absolute;
-  right: 20px;
-  bottom: 30px;
-  font-size: 1.4em;
+  right: 30px;
+  bottom: 25px;
+  font-size: 1.5em;
+  color: #353535;
+  background-color: white;
 }
-.vignettes .vign__box .hover-icon {
-  color: linear-gradient(#9356DC, #FF79DA);
+.vignettes .vign__box .vign__coeur:hover {
+  -webkit-animation: fill 0.5s both;
+          animation: fill 0.5s both;
+}
+.vignettes .vign__box .vign__coeur--fill {
+  z-index: 0;
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+  font-size: 1.5em;
+  background: linear-gradient(355deg, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
 .vignettes .vign__box .btn-new {
   position: absolute;
@@ -514,16 +529,52 @@ body {
     text-align: center;
   }
 }
-#menu__header .vign__coeur {
+#menu__header .menu__coeur {
+  z-index: 2;
   position: absolute;
-  right: 20px;
-  bottom: 5px;
-  width: 1.4em;
-  height: 1.4em;
-  color: red;
-  background-color: red;
+  right: 30px;
+  top: 32px;
+  font-size: 1.5em;
+  color: #353535;
+  background-color: #f4f4f4;
+}
+#menu__header .menu__coeur:hover {
+  -webkit-animation: fill 0.5s both;
+          animation: fill 0.5s both;
+}
+#menu__header .menu__coeur--fill {
+  z-index: 0;
+  position: absolute;
+  right: 30px;
+  top: 32px;
+  font-size: 1.5em;
+  background: linear-gradient(355deg, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
 
+@-webkit-keyframes fill {
+  0% {
+    opacity: 100%;
+    z-index: 2;
+  }
+  100% {
+    opacity: 100%;
+    z-index: -2;
+  }
+}
+
+@keyframes fill {
+  0% {
+    opacity: 100%;
+    z-index: 2;
+  }
+  100% {
+    opacity: 100%;
+    z-index: -2;
+  }
+}
 #menu {
   background-color: #f4f4f4;
   padding-top: 70px;

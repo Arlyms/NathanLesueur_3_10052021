@@ -10,8 +10,23 @@
 		<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/main.css">		
 	</head>
+	<div class="loader">
+		<div class="loader__logo">
+			<div class="point-1"></div>
+			<div class="point-2"></div>
+			<div class="point-3"></div>
+		</div>
+	</div>
 	<body>
 		<div id="bloc_page">
+			<!-- Loading logo-->
+			<div class="loader">
+				<div class="loader__logo">
+					<div class="point-1"></div>
+					<div class="point-2"></div>
+					<div class="point-3"></div>
+				</div>
+			</div>
 			<!-- Header Logo-->
 			<header>
 				<div class="logo_ohmyfood">
@@ -33,31 +48,36 @@
 			<section id="presentation">
 				<h1 class="pres__titre">Réservez le menu qui<br>vous convient</h1>
 				<p class="pres__text">Découvrez des restaurants d'exception,<br> séléctionnés pas nos soins.</p>
-				<a class="btn__recherche" href="#Explorer">Explorer nos restaurants</a>
+				<a class="btn__recherche" href="#restaurants">Explorer nos restaurants</a>
 			</section>
 			<!-- Section 3: Fonctionnement du site-->
 			<section id="fonctionnement">
 				<h2 class="fonct__titre">Fonctionnement</h2>
-				<div class="fonct__btn">
-					<p class="fonct__num">1</p>
-					<a class="fonct__links" href="#Choisir">Choisissez un restaurant</a>
-					<div class="fonct__logo">
-						<i class="fas fa-mobile-alt"></i>
+				<div class="fonct__btns">
+					<div class="fonct__btn">
+						<a class="fonct__links" href="#Choisir"></a>
+						<div class="fonct__grp">
+							<p class="fonct__num">1</p>
+							<p class="fonct__logo"><i class="fas fa-mobile-alt"></i></p>
+							<p class="fonct__text">Choisissez un restaurant</p>
+						</div>
 					</div>
-				</div>
-				<div class="fonct__btn">
-					<a class="fonct__links" href="#Composer">Composer votre menu</a>
-					<p class="fonct__num">2</p>
-					<div class="fonct__logo">
-						<i class="fas fa-list-ul"></i>
+					<div class="fonct__btn">
+						<a class="fonct__links" href="#Choisir"></a>
+						<div class="fonct__grp">
+							<p class="fonct__num">2</p>
+							<p class="fonct__logo"><i class="fas fa-list-ul"></i></p>
+							<p class="fonct__text">Composer votre menu</p>
+						</div>
 					</div>
-				</div>
-				<div class="fonct__btn">
-					<p class="fonct__num">3</p>	
-					<a class="fonct__links" href="#Deguster">Dégustez au restaurant</a>
-					<div class="fonct__logo">
-						<i class="fas fa-store"></i>
-					</div>
+					<div class="fonct__btn">
+						<a class="fonct__links" href="#Choisir"></a>
+						<div class="fonct__grp">
+							<p class="fonct__num">3</p>
+							<p class="fonct__logo"><i class="fas fa-store"></i></p>
+							<p class="fonct__text">Dégustez au restaurant</p>
+						</div>
+					</div>	
 				</div>
 			</section>
 			<!-- Section 4: Choix des retaurants-->
@@ -69,7 +89,10 @@
 						<h4 class="btn-new">Nouveau</h4>
 						<img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Presentation d'un plat"/>
 						<h3 class="vign__titre">La palette de goût</h3>
-						<div class="vign__coeur"><i class="far fa-heart"></i></div>
+						<div class="vign__coeur">
+							<i class="far fa-heart"></i>
+							<!--<p class="fas fa-heart"></p>-->
+						</div>
 						<p class="vign__ville">Ménilmontant</p>
 					</div>
 					<div class="vign__box">
@@ -77,21 +100,21 @@
 						<h4 class="btn-new">Nouveau</h4>
 						<img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Presentation d'un plat"/>
 						<h3 class="vign__titre">La note enchantée</h3>
-						<div class="vign__coeur"><i class="far fa-heart"></i></div>
+						<div class="vign__coeur"></div>
 						<p class="vign__ville">Charonne</p>
 					</div>
 					<div class="vign__box">
 						<a class="vign__clic" href="menu_3.html"></a>
 						<img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Presentation d'un plat"/>
 						<h3 class="vign__titre">À la française</h3>
-						<div class="vign__coeur"><i class="far fa-heart"></i></div>
+						<div class="vign__coeur"></div>
 						<p class="vign__ville">Cité Rouge</p>
 					</div>
 					<div class="vign__box">
 						<a class="vign__clic" href="menu_4.html"></a>
 						<img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Presentation d'un plat"/>
 						<h3 class="vign__titre">Le délice des sens</h3>
-						<div class="vign__coeur"><i class="far fa-heart"></i></div>
+						<div class="vign__coeur"></div>
 						<p class="vign__ville">Folie-Ménicourt</p>
 					</div>
 				</div>

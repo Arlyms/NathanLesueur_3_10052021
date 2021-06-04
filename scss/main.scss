@@ -9,10 +9,21 @@
 $color-primary: #9356DC;
 $color-secondary:#FF79DA;
 $color-tertiary:#99E2D0;
+
+
+$color-primary-hover: #a879e0;
+$color-secondary-hover:#f79cdd;
+
 @mixin btn-deg 
 {
 	background: linear-gradient(355deg,$color-primary,$color-secondary);
 }
+
+@mixin btn-deg-hover 
+{
+	background: linear-gradient(355deg,$color-primary-hover,$color-secondary-hover);
+}
+
 @mixin btn-deg-2 
 {
 	background: linear-gradient(355deg,$color-secondary,$color-primary);
@@ -197,7 +208,8 @@ body
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: inset 0px 5px 10px #c2c2c2;
+	/*box-shadow: inset 0px 5px 10px #c2c2c2;*/
+	background: linear-gradient(#c2c2c2 0%, #eaeaea 10%, #eaeaea 100%);
 }
 
 #Ville 
@@ -242,10 +254,8 @@ body
 	box-shadow: 0px 0px 20px #adadad;
 	&:hover
 	{
-		@include btn-deg;
+		@include btn-deg-hover;
 		transition: 0.3s ease-in-out;
-		opacity: 80%;
-		background-color: white;
 		box-shadow: 3px 5px 10px rgb(34, 34, 34);
 	}
 }
@@ -263,28 +273,40 @@ margin: 0px;
 }
 .fonct__btns
 {
-	display: flex;
-	flex-direction: column;
-	@include desktop-only
-	{
-		flex-direction: row;
-	}
+display: flex;
+flex-direction: column;
+padding-right: 25px;
+padding-left: 30px;
+@include desktop-only
+{
+	flex-direction: row;
+	padding: 15px 0 0 0;
+}
 }
 .fonct__btn
 {
 position: relative;
 background-color: #f4f4f4;
 border-radius: 30px 30px 30px 30px;
-margin: 20px;
-width: 90%;
+width: 100%;
 height: 90px;
-margin-left: 30px;
+margin-top: 10px;
+margin-bottom: 10px;
 box-shadow: 0px 0px 20px #c4c4c4;
 box-sizing: border-box;
+@include desktop-only
+{
+	margin-left: 20px;
+	margin-right: 20px;
+}
 	&:hover
 	{
 	background-color: #e7d4ff;
 	transition: 0.4s ease-in-out;
+
+		.fas{
+			color: white;
+		}
 	}
 	.fonct__links
 	{
@@ -352,17 +374,20 @@ box-sizing: border-box;
 {
 display: flex;
 flex-direction: column;
+align-items: center;
 @include desktop-only
 {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	padding-bottom: 30px;
 }
 	.vign__box
 	{
 		position: relative;
 		width: 90%;
 		height: 250px;
+
 		margin-bottom: 30px;
 		margin: 20px;
 		border-radius: 20px 20px 20px 20px;
@@ -406,7 +431,7 @@ flex-direction: column;
 			background-color: white;
 			&:hover
 			{
-				animation: fill 0.5s both;
+				animation: fill 0.7s both;
 			}
 		}
 		.vign__coeur--fill 
@@ -446,6 +471,10 @@ flex-direction: column;
 
 	.vign__box:last-child{
 		margin-bottom: 40px;
+		@include desktop-only
+		{
+		margin-bottom: 20px;
+		}
 	}
 }
 
@@ -587,7 +616,7 @@ flex-direction: column;
 	}
 }
 
-.aliments
+/*.aliments
 {
 position:relative;
 display: flex;
@@ -642,6 +671,82 @@ box-sizing: border-box;
 		animation: spin 0.5s;
 		}
 		}
+	}
+}*/
+
+.aliments {
+	display: flex;
+	border-radius: 20px;
+
+	.aliments__product {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.aliments__titre
+		{
+			font-size: 1.1em;
+			padding: 10px;	
+			margin: 0px;
+		}
+
+		.aliments__details {
+			display: flex;
+
+			p{
+				margin: 0;
+			}
+
+			.aliments__desc
+			{
+				font-size: 0.9em;
+				width: 100%;
+				padding: 10px;
+			}
+
+			.aliments__prix
+			{
+				font-size: 0.9em;
+				width: 80px;
+				padding: 10px;
+				text-align: right;
+			}
+		}
+	}
+
+	.aliments__check {
+		overflow: hidden;
+		transition: 2s all;
+		width: 0px;
+		display: flex;
+
+		div {			
+			background-color: $color-tertiary;
+			border-radius: 0 20px 20px 0;
+			width: 100px;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;			
+		}
+
+		i {
+			transition: 2s all;
+			transform: rotate(-270deg);
+		}
+		
+	}
+
+	&:hover {
+		
+
+	.aliments__check {
+		width: 100px;
+
+			i {
+				transform: rotate(0deg);
+			}
+	}
 	}
 }
 

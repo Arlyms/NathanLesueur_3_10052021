@@ -110,7 +110,7 @@ $color-secondary-hover:#f79cdd;
 {
 	0%
 	{
-		transform: translate(0,10px);
+		transform: translate(0,20px);
 		opacity: 0%;
 	}
 
@@ -603,6 +603,7 @@ align-items: center;
 
 .menu__entrees 
 {
+	animation: menu 800ms ease-in-out both;
 	@include desktop-only
 	{
 		display: flex;
@@ -613,6 +614,7 @@ align-items: center;
 }
 .menu__plats
 {
+	animation: menu 800ms 800ms ease-in-out both;
 	@include desktop-only
 	{
 		display: flex;
@@ -623,6 +625,8 @@ align-items: center;
 }
 .menu__dessert
 {
+	animation: menu 800ms 1600ms ease-in-out both;
+	
 	@include desktop-only
 	{
 		display: flex;
@@ -641,7 +645,7 @@ align-items: center;
 	margin: 20px;
 	margin-left: 10px;
 	margin-right: 10px;
-	animation: menu 0.7s;
+	
 	.aliments__product {
 		display: flex;
 		flex-direction: column;
@@ -654,14 +658,14 @@ align-items: center;
 			padding-top: 10px;
 			padding-bottom: 2px;	
 			margin: 0px;
-			overflow: hidden;
+			text-overflow: ellipsis;
 			white-space: nowrap;
 		}
 
 		.aliments__details 
 		{
 			display: flex;
-			overflow: hidden;
+			text-overflow: ellipsis;
 			white-space: nowrap;
 			p{
 				margin: 0;

@@ -92,8 +92,8 @@
 }
 @-webkit-keyframes menu {
   0% {
-    -webkit-transform: translate(0, 10px);
-            transform: translate(0, 10px);
+    -webkit-transform: translate(0, 20px);
+            transform: translate(0, 20px);
     opacity: 0%;
   }
   100% {
@@ -104,8 +104,8 @@
 }
 @keyframes menu {
   0% {
-    -webkit-transform: translate(0, 10px);
-            transform: translate(0, 10px);
+    -webkit-transform: translate(0, 20px);
+            transform: translate(0, 20px);
     opacity: 0%;
   }
   100% {
@@ -644,6 +644,10 @@ body {
           box-sizing: border-box;
 }
 
+.menu__entrees {
+  -webkit-animation: menu 800ms ease-in-out both;
+          animation: menu 800ms ease-in-out both;
+}
 @media only screen and (min-width: 1024px) {
   .menu__entrees {
     display: -webkit-box;
@@ -658,6 +662,10 @@ body {
   }
 }
 
+.menu__plats {
+  -webkit-animation: menu 800ms 800ms ease-in-out both;
+          animation: menu 800ms 800ms ease-in-out both;
+}
 @media only screen and (min-width: 1024px) {
   .menu__plats {
     display: -webkit-box;
@@ -672,6 +680,10 @@ body {
   }
 }
 
+.menu__dessert {
+  -webkit-animation: menu 800ms 1600ms ease-in-out both;
+          animation: menu 800ms 1600ms ease-in-out both;
+}
 @media only screen and (min-width: 1024px) {
   .menu__dessert {
     display: -webkit-box;
@@ -697,8 +709,6 @@ body {
   margin: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  -webkit-animation: menu 0.7s;
-          animation: menu 0.7s;
 }
 .aliments .aliments__product {
   display: -webkit-box;
@@ -716,17 +726,15 @@ body {
   padding-top: 10px;
   padding-bottom: 2px;
   margin: 0px;
-  overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .aliments .aliments__product .aliments__details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .aliments .aliments__product .aliments__details p {
   margin: 0;

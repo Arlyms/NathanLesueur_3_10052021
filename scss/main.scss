@@ -39,6 +39,11 @@ $color-secondary-hover:#f79cdd;
 	}
   }
 
+::placeholder {
+	color: black;
+	font-weight: bold;		
+}
+
 
 .loader
 {
@@ -436,30 +441,47 @@ align-items: center;
 			margin-top: 5px;
 			margin-left: 10px;
 		}
-		.vign__coeur 
-		{	
-			z-index: +2;
+
+		.vign__fav {
 			position: absolute;
 			right: 30px;
 			bottom: 25px;
-			font-size: 1.5em;
-			color:#353535;
-			background-color: white;
+			width: 24px;
+			height: 24px;
+
+			.vign__coeur 
+			{	
+				position: absolute;
+				font-size: 1.5em;
+				color:#353535;
+				background-color: white;
+				opacity: 1;
+				transition: 1s opacity;
+				
+			}
+			.vign__coeur--fill 
+			{	
+				position: absolute;
+				font-size: 1.5em;
+				@include btn-deg;
+				color: transparent;
+				background-clip: text;
+				opacity: 0;
+				transition: 1s opacity;
+			}
+
 			&:hover
 			{
-				animation: fill 0.7s both;
+				.vign__coeur 
+				{	
+					opacity: 0;
+					
+				}
+				.vign__coeur--fill 
+				{	
+					opacity: 1;
+				}
 			}
-		}
-		.vign__coeur--fill 
-		{	
-			z-index: 0;
-			position: absolute;
-			right: 30px;
-			bottom: 25px;
-			font-size: 1.5em;
-			@include btn-deg;
-			background-clip: text;
-			color: transparent;
 		}
 		.btn-new
 		{
@@ -541,47 +563,48 @@ align-items: center;
 			text-align: center;
 		}
 	}
-	.menu__coeur 
-	{	
-		z-index: +2;
+	.menu__fav 
+	{
+	position: absolute;
+	right: 30px;
+	bottom: 25px;
+	width: 24px;
+	height: 24px;
+
+		.menu__coeur 
+		{	
 		position: absolute;
-		right: 30px;
-		top: 32px;
 		font-size: 1.5em;
 		color:#353535;
 		background-color: #f4f4f4;
-		&:hover
-		{
-			animation: fill 0.5s both;
+		opacity: 1;
+		transition: 1s opacity;
 		}
-	}
-	.menu__coeur--fill 
-	{	
-		z-index: 0;
+		.menu__coeur--fill 
+		{		
 		position: absolute;
-		right: 30px;
-		top: 32px;
 		font-size: 1.5em;
 		@include btn-deg;
-		background-clip: text;
 		color: transparent;
+		background-clip: text;
+		opacity: 0;
+		transition: 1s opacity;
+		}
+
+		&:hover
+		{
+			.menu__coeur 
+			{	
+				opacity: 0;
+			}
+			.menu__coeur--fill 
+			{	
+				opacity: 1;
+			}
+		}
 	}
 }
 
-@keyframes fill 
-{
-	0%
-	{
-		opacity: 100%;
-		z-index: +2;
-	}
-	100%
-	{
-		opacity: 100%;
-		z-index: -2;
-		
-	}
-}
 
 
 #menu
@@ -638,6 +661,7 @@ align-items: center;
 
 
 .aliments {
+	position: relative;
 	display: flex;
 	border-radius: 20px;
 	background-color: white;
@@ -650,6 +674,8 @@ align-items: center;
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+		transition: 2s margin-right;
+		margin-right: 0;	
 
 		.aliments__titre
 		{
@@ -665,8 +691,6 @@ align-items: center;
 		.aliments__details 
 		{
 			display: flex;
-			text-overflow: ellipsis;
-			white-space: nowrap;
 			p{
 				margin: 0;
 			}
@@ -674,17 +698,21 @@ align-items: center;
 			.aliments__desc
 			{
 				font-size: 0.9em;
-				width: 100%;
+				flex-grow: 1;
+				width: 1em;
 				padding: 10px;
 				padding-top: 2px;
 				padding-bottom: 10px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 
 			.aliments__prix
 			{
 				font-size: 0.8em;
 				font-weight: 600;
-				width: 80px;
+				width: 30px;
 				padding: 10px;
 				padding-top: 2px;
 				padding-bottom: 10px;
@@ -694,23 +722,31 @@ align-items: center;
 	}
 
 	.aliments__check {
+		position:absolute;
+		right: 0px;
+		top: 0px;
 		overflow: hidden;
-		transition: 2s all;
+		transition: 1s all;
 		width: 0px;
+		height: 100%;
 		display: flex;
+		justify-content: center;
+		align-items: center;
 
-		div {			
-			background-color: $color-tertiary;
+		div {		
+			position: absolute;
+			right: 0;
+			top: 0;
 			border-radius: 0 20px 20px 0;
+			background-color: $color-tertiary;	
 			width: 100px;
 			height: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;			
+			display: flex;	
+			overflow: hidden;		
 		}
 
 		i {
-			transition: 2s all;
+			transition: 1s all;
 			transform: rotate(-270deg);
 			color: white;
 			font-size: 1.5em;
@@ -720,6 +756,9 @@ align-items: center;
 
 	&:hover {
 		
+	.aliments__product {
+		margin-right: 100px;
+	}
 
 	.aliments__check {
 		width: 100px;

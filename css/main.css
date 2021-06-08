@@ -5,6 +5,27 @@
 /**Fonctionnement**/
 /**Choix des restaurants**/
 /**Footer**/
+::-webkit-input-placeholder {
+  color: black;
+  font-weight: bold;
+}
+::-moz-placeholder {
+  color: black;
+  font-weight: bold;
+}
+:-ms-input-placeholder {
+  color: black;
+  font-weight: bold;
+}
+::-ms-input-placeholder {
+  color: black;
+  font-weight: bold;
+}
+::placeholder {
+  color: black;
+  font-weight: bold;
+}
+
 .loader {
   position: fixed;
   display: -webkit-box;
@@ -481,29 +502,38 @@ body {
   margin-top: 5px;
   margin-left: 10px;
 }
-.vignettes .vign__box .vign__coeur {
-  z-index: 2;
+.vignettes .vign__box .vign__fav {
   position: absolute;
   right: 30px;
   bottom: 25px;
+  width: 24px;
+  height: 24px;
+}
+.vignettes .vign__box .vign__fav .vign__coeur {
+  position: absolute;
   font-size: 1.5em;
   color: #353535;
   background-color: white;
+  opacity: 1;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
 }
-.vignettes .vign__box .vign__coeur:hover {
-  -webkit-animation: fill 0.7s both;
-          animation: fill 0.7s both;
-}
-.vignettes .vign__box .vign__coeur--fill {
-  z-index: 0;
+.vignettes .vign__box .vign__fav .vign__coeur--fill {
   position: absolute;
-  right: 30px;
-  bottom: 25px;
   font-size: 1.5em;
   background: linear-gradient(355deg, #9356DC, #FF79DA);
+  color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
-  color: transparent;
+  opacity: 0;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
+}
+.vignettes .vign__box .vign__fav:hover .vign__coeur {
+  opacity: 0;
+}
+.vignettes .vign__box .vign__fav:hover .vign__coeur--fill {
+  opacity: 1;
 }
 .vignettes .vign__box .btn-new {
   position: absolute;
@@ -582,52 +612,40 @@ body {
     text-align: center;
   }
 }
-#menu__header .menu__coeur {
-  z-index: 2;
+#menu__header .menu__fav {
   position: absolute;
   right: 30px;
-  top: 32px;
+  bottom: 25px;
+  width: 24px;
+  height: 24px;
+}
+#menu__header .menu__fav .menu__coeur {
+  position: absolute;
   font-size: 1.5em;
   color: #353535;
   background-color: #f4f4f4;
+  opacity: 1;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
 }
-#menu__header .menu__coeur:hover {
-  -webkit-animation: fill 0.5s both;
-          animation: fill 0.5s both;
-}
-#menu__header .menu__coeur--fill {
-  z-index: 0;
+#menu__header .menu__fav .menu__coeur--fill {
   position: absolute;
-  right: 30px;
-  top: 32px;
   font-size: 1.5em;
   background: linear-gradient(355deg, #9356DC, #FF79DA);
+  color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
-  color: transparent;
+  opacity: 0;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
+}
+#menu__header .menu__fav:hover .menu__coeur {
+  opacity: 0;
+}
+#menu__header .menu__fav:hover .menu__coeur--fill {
+  opacity: 1;
 }
 
-@-webkit-keyframes fill {
-  0% {
-    opacity: 100%;
-    z-index: 2;
-  }
-  100% {
-    opacity: 100%;
-    z-index: -2;
-  }
-}
-
-@keyframes fill {
-  0% {
-    opacity: 100%;
-    z-index: 2;
-  }
-  100% {
-    opacity: 100%;
-    z-index: -2;
-  }
-}
 #menu {
   background-color: #f4f4f4;
   padding-top: 70px;
@@ -699,6 +717,7 @@ body {
 }
 
 .aliments {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -719,6 +738,9 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  -webkit-transition: 2s margin-right;
+  transition: 2s margin-right;
+  margin-right: 0;
 }
 .aliments .aliments__product .aliments__titre {
   font-size: 1.1em;
@@ -733,41 +755,40 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .aliments .aliments__product .aliments__details p {
   margin: 0;
 }
 .aliments .aliments__product .aliments__details .aliments__desc {
   font-size: 0.9em;
-  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 1em;
   padding: 10px;
   padding-top: 2px;
   padding-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .aliments .aliments__product .aliments__details .aliments__prix {
   font-size: 0.8em;
   font-weight: 600;
-  width: 80px;
+  width: 30px;
   padding: 10px;
   padding-top: 2px;
   padding-bottom: 10px;
   text-align: right;
 }
 .aliments .aliments__check {
+  position: absolute;
+  right: 0px;
+  top: 0px;
   overflow: hidden;
-  -webkit-transition: 2s all;
-  transition: 2s all;
+  -webkit-transition: 1.5s all;
+  transition: 1.5s all;
   width: 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.aliments .aliments__check div {
-  background-color: #99E2D0;
-  border-radius: 0 20px 20px 0;
-  width: 100px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -779,13 +800,29 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+.aliments .aliments__check div {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 0 20px 20px 0;
+  background-color: #99E2D0;
+  width: 100px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
 .aliments .aliments__check i {
-  -webkit-transition: 2s all;
-  transition: 2s all;
+  -webkit-transition: 1.5s all;
+  transition: 1.5s all;
   -webkit-transform: rotate(-270deg);
           transform: rotate(-270deg);
   color: white;
   font-size: 1.5em;
+}
+.aliments:hover .aliments__product {
+  margin-right: 100px;
 }
 .aliments:hover .aliments__check {
   width: 100px;

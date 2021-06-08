@@ -106,6 +106,20 @@ $color-secondary-hover:#f79cdd;
 
 }
 
+@keyframes menu 
+{
+	0%
+	{
+		transform: translate(0,10px);
+		opacity: 0%;
+	}
+
+	100%
+	{
+		transform: translate(0,0);
+		opacity: 100%;
+	}
+}
 
 @keyframes loader-logo 
 {
@@ -306,6 +320,7 @@ box-sizing: border-box;
 
 		.fas{
 			color: white;
+			transition: 0.4s ease-in-out;
 		}
 	}
 	.fonct__links
@@ -338,16 +353,17 @@ box-sizing: border-box;
 	.fonct__num
 	{
 	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	top: 50%;
 	transform: translate(-50%,-50%);
 	left: 0px;
 	margin: 0px;
 	color: white;
+	width: 30px;
+	height: 30px;
 	font-weight: 500;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-right: 10px;
-	padding-left: 10px;
 	background-color: $color-primary;
 	border-radius: 25px 25px 25px 25px;
 	}			    	
@@ -616,68 +632,16 @@ align-items: center;
 	}
 }
 
-/*.aliments
-{
-position:relative;
-display: flex;
-flex-wrap: wrap;
-border-radius: 15px 15px 15px 15px;
-background-color: white;
-box-shadow: 0px 0px 20px #c4c4c4;
-margin-left: 18px;
-margin-right: 18px;
-margin-bottom: 20px;
-box-sizing: border-box;
-	.aliments__titre
-	{
-		font-size: 1.1em;
-		width: 100%;
-		padding: 10px;	
-		padding-bottom: 5px;
-		margin: 0px;
-	}
-	.aliments__desc
-	{
-		font-size: 0.9em;
-		width: 80%;
-		padding: 10px;
-		padding-top: 0px;
-		margin: 0px;
-	}
-	.prix
-	{
-	position: absolute;
-	bottom: 5px;
-	right: 10px;
-		.prix__euro
-		{ 
-		font-weight: 600;
-		width: 10%;
-		margin: 0px;
-		padding-bottom: 10px;
-		}
-		.prix__chek
-		{
-		position:absolute;
-		top: 0;
-		right: 0;
-		border-radius: 0px 15px 15px 0px;
-		background-color: $color-tertiary;
-		display: block;
-		animation: check 0.5s;
-		& i
-		{
-		color: white;
-		animation: spin 0.5s;
-		}
-		}
-	}
-}*/
 
 .aliments {
 	display: flex;
 	border-radius: 20px;
-
+	background-color: white;
+	box-shadow: 0px 0px 20px #c4c4c4;
+	margin: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	animation: menu 0.7s;
 	.aliments__product {
 		display: flex;
 		flex-direction: column;
@@ -686,13 +650,19 @@ box-sizing: border-box;
 		.aliments__titre
 		{
 			font-size: 1.1em;
-			padding: 10px;	
+			padding: 10px;
+			padding-top: 10px;
+			padding-bottom: 2px;	
 			margin: 0px;
+			overflow: hidden;
+			white-space: nowrap;
 		}
 
-		.aliments__details {
+		.aliments__details 
+		{
 			display: flex;
-
+			overflow: hidden;
+			white-space: nowrap;
 			p{
 				margin: 0;
 			}
@@ -702,13 +672,18 @@ box-sizing: border-box;
 				font-size: 0.9em;
 				width: 100%;
 				padding: 10px;
+				padding-top: 2px;
+				padding-bottom: 10px;
 			}
 
 			.aliments__prix
 			{
-				font-size: 0.9em;
+				font-size: 0.8em;
+				font-weight: 600;
 				width: 80px;
 				padding: 10px;
+				padding-top: 2px;
+				padding-bottom: 10px;
 				text-align: right;
 			}
 		}
@@ -733,6 +708,8 @@ box-sizing: border-box;
 		i {
 			transition: 2s all;
 			transform: rotate(-270deg);
+			color: white;
+			font-size: 1.5em;
 		}
 		
 	}
@@ -750,25 +727,6 @@ box-sizing: border-box;
 	}
 }
 
-@keyframes spin
-{
-	0%{
-		transform: rotate(0deg);
-	}
-	100%{
-		transform:rotate(360deg);
-	}
-}
-
-@keyframes check 
-{
-	0%{
-		transform: translateX(9999px);
-	}
-	100%{
-		transform: translateX(0);
-	}
-}
 
 
 .commander

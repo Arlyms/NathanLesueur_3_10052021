@@ -10,15 +10,16 @@
 		<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/main.css">		
 	</head>
-	<div class="loader">
-		<div class="loader__logo">
-			<div class="point-1"></div>
-			<div class="point-2"></div>
-			<div class="point-3"></div>
-		</div>
-	</div>
 	<body>
+		<div class="loader">
+			<div class="loader__logo">
+				<div class="point-1"></div>
+				<div class="point-2"></div>
+				<div class="point-3"></div>
+			</div>
+		</div>
 		<div id="bloc_page">
+
 			<!-- Loading logo-->
 			<div class="loader">
 				<div class="loader__logo">
@@ -27,14 +28,16 @@
 					<div class="point-3"></div>
 				</div>
 			</div>
-			<!-- Header Logo-->
+
+			<!-- Header-->
 			<header>
 				<div class="logo_ohmyfood">
 					<img src="images/logo/ohmyfood.png" alt="logo Ohmyfood"/>
 				</div>
 			</header>
+
 			<!-- Section 1: Recherches villes-->	
-			<section id="recherches">
+			<div id="recherches">
 				<form method="post" action="traitement.php">
 					<div class="rech__champ">
 						<label for="Ville" class="maps">
@@ -43,14 +46,16 @@
 						<input type="search" name="Recherche" id="Ville" placeholder=" Paris, Belleville" />
 					</div>
 				</form>
-			</section>	
-			<!-- Section 2: presentation du concept-->
-			<section id="presentation">
+			</div>
+
+			<!--Presentation du concept-->
+			<article id="presentation">
 				<h1 class="pres__titre">Réservez le menu qui<br>vous convient</h1>
 				<p class="pres__text">Découvrez des restaurants d'exception,<br> séléctionnés pas nos soins.</p>
 				<a class="btn__recherche" href="#restaurants">Explorer nos restaurants</a>
-			</section>
-			<!-- Section 3: Fonctionnement du site-->
+			</article>
+
+			<!--Fonctionnement du site-->
 			<section id="fonctionnement">
 				<h2 class="fonct__titre">Fonctionnement</h2>
 				<div class="fonct__btns">
@@ -80,7 +85,8 @@
 					</div>	
 				</div>
 			</section>
-			<!-- Section 4: Choix des retaurants-->
+
+			<!--Choix des retaurants-->
 			<section id="restaurants">
 				<h2 class="rest__titre">Restaurants</h2>
 				<div class="vignettes">
@@ -128,15 +134,16 @@
 					</div>
 				</div>
 			</section>
+
 			<!-- Footer-->
 			<footer>
 				<h3 class="foot__logo">ohmyfood</h3>
 				<a class="foot__links" href="#Proposer"><i class="fas fa-utensils"></i>&emsp; Proposer un restaurant</a>
-				<a class="foot__links" href="#Partenaire"><i class="fas fa-hands-helping"></i>&nbsp;&#160; Devenir partenaire</i></a>
+				<a class="foot__links" href="#Partenaire"><i class="fas fa-hands-helping"></i>&nbsp;&#160; Devenir partenaire</a>
 				<a class="foot__links" href="#Mentions">Mentions légales</a>
 				<a class="foot__links" href="mailto:contact@ohmyfood.com">Contact</a>
 			</footer>
 		</div>
-	<script src="https://kit.fontawesome.com/95bd1fdfdf.js" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/95bd1fdfdf.js" crossorigin="anonymous"></script>
 	</body>
 </html>

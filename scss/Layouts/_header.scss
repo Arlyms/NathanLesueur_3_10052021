@@ -1,0 +1,27 @@
+.logo_ohmyfood 
+{
+	display: block;
+	align-items: center;
+	height: 45px;
+	position: relative;
+		& img 
+		{
+			width: 150px;
+			height: 30px;
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+			margin-top: 15px;
+		}
+		.arrow
+		{
+			position: absolute;
+			left: 30px;
+			top: 7px;
+			a
+			{
+				text-decoration: none;
+				color:#353535;
+			}
+		}
+}

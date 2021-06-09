@@ -1,0 +1,27 @@
+footer
+{
+	display: flex;
+	flex-direction: column;
+	background-color: #353535;
+	padding: 20px;
+	box-sizing: border-box;
+	@include desktop-only
+	{
+		align-items: center;
+	}
+	.foot__logo
+	{
+	font-family: 'Shrikhand', cursive;
+	color: white;
+	font-weight: 100;
+	margin-top: 5px;
+	}
+	.foot__links
+	{
+		font-weight: 400;
+		text-decoration: none;
+		color: white;
+		line-height: 30px;
+		
+	}
+}

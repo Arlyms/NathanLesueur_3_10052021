@@ -1,0 +1,251 @@
+.baniere
+{ 
+	img 
+	{
+		width: 100%;
+		max-height: 250px;
+		object-fit: cover;
+		margin-bottom: -50px;
+	}
+}
+
+#menu__header
+{
+	position: absolute;
+	display: flex;
+	border-radius: 35px 35px 0px 0px;
+	background-color: #f4f4f4;
+	width: 100%;
+	.menu__titre
+	{
+		width: 85%;
+		font-family: 'Shrikhand', cursive;
+		font-size: 1.6em;
+		padding: 20px;
+		padding-right: 0px;
+		margin: 0px;
+		margin-top: 10px;
+		box-sizing: border-box;
+		@include desktop-only
+		{
+			margin:auto;
+			text-align: center;
+		}
+	}
+	.menu__fav 
+	{
+	position: absolute;
+	right: 30px;
+	bottom: 25px;
+	width: 24px;
+	height: 24px;
+
+		.menu__coeur 
+		{	
+		position: absolute;
+		font-size: 1.5em;
+		color:#353535;
+		background-color: #f4f4f4;
+		opacity: 1;
+		transition: 1s opacity;
+		}
+		.menu__coeur--fill 
+		{		
+		position: absolute;
+		font-size: 1.5em;
+		@include btn-deg;
+		color: transparent;
+		background-clip: text;
+		opacity: 0;
+		transition: 1s opacity;
+		}
+
+		&:hover
+		{
+			.menu__coeur 
+			{	
+				opacity: 0;
+			}
+			.menu__coeur--fill 
+			{	
+				opacity: 1;
+			}
+		}
+	}
+}
+
+#menu
+{
+	background-color: #f4f4f4;
+	padding-top: 70px;	
+}
+
+.menu__sous-titre
+{
+	width: 50px;
+	margin-left: 20px;
+	padding-bottom: 5px;
+	font-weight: 500;
+	font-size: 1.2em;
+	border-bottom: 3px solid $color-tertiary;
+	box-sizing: border-box;
+}
+
+.menu__entrees 
+{
+	animation: menu 800ms ease-in-out both;
+	@include desktop-only
+	{
+		display: flex;
+		flex-direction: column;
+		width: 500px;
+		margin: auto;
+	}
+}
+
+.menu__plats
+{
+	animation: menu 800ms 800ms ease-in-out both;
+	@include desktop-only
+	{
+		display: flex;
+		flex-direction: column;
+		width: 500px;
+		margin: auto;
+	}
+}
+
+.menu__dessert
+{
+	animation: menu 800ms 1600ms ease-in-out both;
+	
+	@include desktop-only
+	{
+		display: flex;
+		flex-direction: column;
+		width: 500px;
+		margin: auto;
+	}
+}
+
+.aliments 
+{
+	position: relative;
+	display: flex;
+	border-radius: 20px;
+	background-color: white;
+	box-shadow: 0px 0px 20px #c4c4c4;
+	margin: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	
+	.aliments__product 
+    {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		transition: 2s margin-right;
+		margin-right: 0;	
+
+		.aliments__titre
+		{
+			font-size: 1.1em;
+			padding: 10px;
+			padding-top: 10px;
+			padding-bottom: 2px;	
+			margin: 0px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.aliments__details 
+		{
+			display: flex;
+			p{
+				margin: 0;
+			}
+
+			.aliments__desc
+			{
+				font-size: 0.9em;
+				flex-grow: 1;
+				width: 1em;
+				padding: 10px;
+				padding-top: 2px;
+				padding-bottom: 10px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.aliments__prix
+			{
+				font-size: 0.8em;
+				font-weight: 600;
+				width: 30px;
+				padding: 10px;
+				padding-top: 2px;
+				padding-bottom: 10px;
+				text-align: right;
+			}
+		}
+	}
+
+	.aliments__check {
+		position:absolute;
+		right: 0px;
+		top: 0px;
+		overflow: hidden;
+		transition: all 1s ease-in-out;
+		width: 0px;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		div {		
+			position: absolute;
+			right: 0;
+			top: 0;
+			border-radius: 0 20px 20px 0;
+			background-color: $color-tertiary;	
+			width: 60px;
+			height: 100%;
+			display: flex;	
+			overflow: hidden;		
+		}
+
+		i 
+		{
+			transition: all 1s ease-in-out;
+			transform: rotate(-270deg);
+			color: white;
+			font-size: 1.5em;
+		}
+		
+	}
+
+	&:hover {
+		
+	.aliments__product {
+		margin-right: 70px;
+	}
+
+	.aliments__check {
+		width: 60px;
+
+			i {
+				transform: rotate(0deg);
+			}
+	}
+	}
+}
+
+.commander
+{
+	text-align: center;
+	padding: 40px;
+	padding-top: 20px;
+	box-sizing: border-box;
+
+}

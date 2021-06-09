@@ -1,0 +1,295 @@
+/**Sommaire**/
+
+/**Recherche**/
+/**Présenttation**/
+/**Fonctionnement**/
+/**Choix des retaurants**/
+
+
+
+/**Recherche**/
+
+#recherches
+{
+	background-color:#eaeaea;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*box-shadow: inset 0px 5px 10px #c2c2c2;*/
+	background: linear-gradient(#c2c2c2 0%, #eaeaea 10%, #eaeaea 100%);
+}
+
+#Ville 
+{
+	background-color:#eaeaea;
+	border: none;
+	text-align: center;
+}
+
+/**Présenttation**/
+
+#presentation
+{
+	background-color: #f4f4f4;
+	padding-top: 10px;
+	padding-bottom: 40px;
+	text-align: center;
+	box-sizing: border-box;
+		h1
+		{
+		font-size: 1.6em;
+		font-weight: 900;
+		margin-top: 10px;
+		}
+		p
+		{
+			margin-bottom: 40px;
+		}
+		
+}
+
+/**Fonctionnement**/
+
+.fonct__titre
+{
+box-sizing: border-box;
+padding-left: 20px;
+padding-top: 40px;
+padding-bottom: 20px;
+margin: 0px;
+}
+.fonct__btns
+{
+display: flex;
+flex-direction: column;
+padding-right: 25px;
+padding-left: 30px;
+@include desktop-only
+{
+	flex-direction: row;
+	padding: 15px 0 0 0;
+}
+}
+.fonct__btn
+{
+position: relative;
+background-color: #f4f4f4;
+border-radius: 30px 30px 30px 30px;
+width: 100%;
+height: 90px;
+margin-top: 10px;
+margin-bottom: 10px;
+box-shadow: 0px 0px 20px #c4c4c4;
+box-sizing: border-box;
+@include desktop-only
+{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+	&:hover
+	{
+	background-color: #e7d4ff;
+	transition: 0.4s ease-in-out;
+
+		.fas{
+			color: $color-primary;
+			transition: 0.4s ease-in-out;
+		}
+	}
+	.fonct__links
+	{
+	position: absolute;
+	left: 0px;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 30px 30px 30px 30px
+	}
+	.fonct__grp
+	{
+	display: flex;
+	justify-content: space-around;
+    }
+	.fonct__logo
+	{ 
+	font-size: 1.4em;
+	margin-left: 40px;
+	margin-top: 32px;
+	color: #969696;
+	}
+	.fonct__text
+	{
+	font-weight: 600;
+	padding-top: 20px;
+	margin-right: 50px;
+	}
+	.fonct__num
+	{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	left: 0px;
+	margin: 0px;
+	color: white;
+	width: 30px;
+	height: 30px;
+	font-weight: 500;
+	background-color: $color-primary;
+	border-radius: 25px 25px 25px 25px;
+	}			    	
+}
+
+/**Choix des retaurants**/
+
+#restaurants
+{
+	background-color:#f4f4f4;
+	margin-top:50px;
+	.rest__titre
+	{
+	box-sizing: border-box;
+	padding-left: 20px;
+	padding-top: 40px;
+	padding-bottom: 20px;
+	margin: 0px;
+	}
+}
+.vignettes
+{
+display: flex;
+flex-direction: column;
+align-items: center;
+@include desktop-only
+{
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding-bottom: 30px;
+}
+	.vign__box
+	{
+		position: relative;
+		width: 90%;
+		height: 250px;
+
+		margin-bottom: 30px;
+		margin: 20px;
+		border-radius: 20px 20px 20px 20px;
+		box-shadow: 0px 0px 20px #b0b0b0;
+		background-color: white;
+		box-sizing: border-box;
+		@include desktop-only
+		{
+			width: 45%;
+		}
+		.vign__clic
+		{
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			margin-bottom: 30px;
+			border-radius: 20px 20px 20px 20px;
+			box-sizing: border-box;
+		
+		}
+		.vign__titre
+		{
+			margin-top: 10px;
+			margin-bottom: 5px;
+			margin-left: 10px;
+		}
+		.vign__ville
+		{
+			margin-top: 5px;
+			margin-left: 10px;
+		}
+
+		.vign__fav {
+			position: absolute;
+			right: 30px;
+			bottom: 25px;
+			width: 24px;
+			height: 24px;
+
+			.vign__coeur 
+			{	
+				position: absolute;
+				font-size: 1.5em;
+				color:#353535;
+				background-color: white;
+				opacity: 1;
+				transition: 1s opacity;
+				
+			}
+			.vign__coeur--fill 
+			{	
+				position: absolute;
+				font-size: 1.5em;
+				@include btn-deg;
+				color: transparent;
+				background-clip: text;
+				opacity: 0;
+				transition: 1s opacity;
+			}
+
+			&:hover
+			{
+				.vign__coeur 
+				{	
+					opacity: 0;
+					
+				}
+				.vign__coeur--fill 
+				{	
+					opacity: 1;
+				}
+			}
+		}
+		.btn-new
+		{
+			position: absolute;
+			right: 10px;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			font-size: 0.8em;
+			border-radius: 3px 3px 3px 3px;
+			background-color: $color-tertiary;
+			color: #008765;
+			box-sizing: border-box;
+		}
+		img
+		{
+			width: 100%;
+			height: 70%;
+			object-fit: cover;
+			border-radius: 20px 20px 0px 0px;
+			box-sizing: border-box;
+		}
+	}
+
+	.vign__box:last-child{
+		margin-bottom: 40px;
+		@include desktop-only
+		{
+		margin-bottom: 20px;
+		}
+	}
+}
+
+.btn-new
+{
+	position: absolute;
+	padding: 5px;
+	font-size: 0.6em;
+	border-radius: 3px 3px 3px 3px;
+	background-color: $color-tertiary;
+	color: #008765;
+	content: "Nouveau";
+}

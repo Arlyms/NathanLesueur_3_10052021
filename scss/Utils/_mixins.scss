@@ -1,0 +1,27 @@
+@mixin btn-deg 
+{
+	background: linear-gradient(355deg,$color-primary,$color-secondary);
+}
+
+@mixin btn-deg-hover 
+{
+	background: linear-gradient(355deg,$color-primary-hover,$color-secondary-hover);
+}
+
+@mixin btn-deg-2 
+{
+	background: linear-gradient(355deg,$color-secondary,$color-primary);
+}
+
+@mixin btn-deg-3 
+{
+	background: linear-gradient(355deg,$color-tertiary,$color-secondary);
+}
+
+@mixin desktop-only 
+{
+	@media only screen and (min-width: 1024px) 
+    {
+	  @content;
+	}
+}

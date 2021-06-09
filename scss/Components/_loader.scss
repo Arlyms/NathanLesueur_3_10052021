@@ -1,0 +1,48 @@
+.loader
+{
+	position: fixed;
+	display: flex;
+	justify-content: center;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+	z-index: 1;
+	background-color: rgb(53, 53, 53, 0.5);
+	animation: loader .01s;
+    animation-delay: 1.5s;
+    animation-fill-mode: both;
+	&__logo
+	{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.point-1
+		{
+			width: 20px;
+			height: 20px;
+			margin: 5px;
+			border-radius: 10px;
+			@include btn-deg-2;
+			animation: loader-logo 0.8s;
+		}
+		.point-2
+		{
+			width: 20px;
+			height: 20px;
+			margin: 5px;
+			border-radius: 10px;
+			@include btn-deg;
+			animation: loader-logo 0.8s 0.25s;
+		}
+		.point-3
+		{
+			width: 20px;
+			height: 20px;
+			margin: 5px;
+			border-radius: 10px;
+			@include btn-deg-2;
+			animation: loader-logo 0.8s 0.5s;
+		}
+    }
+}

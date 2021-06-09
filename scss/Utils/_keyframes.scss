@@ -1,0 +1,73 @@
+@keyframes loader
+{
+	0% 
+	{
+		z-index: +3;
+	}
+	99%
+	{
+		z-index: -10;
+	}
+	100% 
+	{
+		opacity: 0%;
+		z-index: -10;
+	}
+}
+
+@keyframes menu 
+{
+	0%
+	{
+		transform: translate(0,20px);
+		opacity: 0%;
+	}
+
+	100%
+	{
+		transform: translate(0,0);
+		opacity: 100%;
+	}
+}
+
+@keyframes loader-logo 
+{
+	
+	0%
+	{
+		transform: translate(0,0);
+	}
+	13%
+	{
+		transform: translate(0, -5px);
+	}
+	26%
+	{
+		transform: translate(0, -10px);
+		
+	}
+	39%
+	{
+		transform: translate(0, -5px);
+	}
+	52%
+	{
+		transform: translate(0,0);
+	}
+	65%
+	{
+		transform: translate(0, -5px);
+	}
+	78%
+	{
+		transform: translate(0, -10px);
+	}
+	91%
+	{
+		transform: translate(0, -5px);
+	}
+	100%
+	{
+		transform: translate(0,0);
+	}
+}

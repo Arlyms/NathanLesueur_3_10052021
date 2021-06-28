@@ -557,7 +557,6 @@ footer .foot__links {
   font-size: 1.5em;
   background: linear-gradient(355deg, #9356DC, #FF79DA);
   -webkit-background-clip: text;
-          background-clip: text;
   color: transparent;
   opacity: 0;
   -webkit-transition: 1s opacity;
@@ -666,7 +665,6 @@ footer .foot__links {
   font-size: 1.5em;
   background: linear-gradient(355deg, #9356DC, #FF79DA);
   -webkit-background-clip: text;
-          background-clip: text;
   color: transparent;
   opacity: 0;
   -webkit-transition: 1s opacity;

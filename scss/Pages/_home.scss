@@ -231,7 +231,7 @@ align-items: center;
 				position: absolute;
 				font-size: 1.5em;
 				@include btn-deg;
-				background-clip: text;
+				-webkit-background-clip: text;
 				color: transparent;
 				opacity: 0;
 				transition: 1s opacity;
